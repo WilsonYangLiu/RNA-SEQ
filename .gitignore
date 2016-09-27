@@ -128,3 +128,4 @@ ENV/
 /rawData
 /bak
 /BW_index
+*.xlsx
