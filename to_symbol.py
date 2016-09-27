@@ -9,7 +9,7 @@ with open(r'mm10_with-symbol', 'rU') as f:
 		GeneDict[word[0]] = word[-1][:-1]
 	print len(GeneDict)
 
-with open(r'./diff_off-2w_result/sig_GeneId', 'rU') as f:
+with open(r'./diff_Sb-2w_result/sig_GeneId', 'rU') as f:
 	for line in f:
 		if line[:-1] != '-':
 			ensGene = line.split(',')

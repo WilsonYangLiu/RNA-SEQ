@@ -124,6 +124,7 @@ ENV/
 .ropeproject
 
 # My configurations
+/diff_Sb-2w_result
 /diff_off-2w_result
 /rawData
 /bak
