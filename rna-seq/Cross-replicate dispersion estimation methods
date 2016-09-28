@@ -1,0 +1,19 @@
+# Cuffdiff works by modeling the variance in fragment counts across replicates as a function of the mean fragment count across replicates. 
+# Strictly speaking, models a quantitity called dispersion - the variance present in a group of samples beyond what is expected from a simple 
+# Poisson model of RNA_Seq. You can control how Cuffdiff constructs its model of dispersion in locus fragment counts. Each condition that 
+# has replicates can receive its own model, or Cuffdiff can use a global model for all conditions. All of these policies are identical to 
+# those used by DESeq (Anders and Huber, Genome Biology, 2010)
+
+Dispersion Method 	Description
+pooled 	Each replicated condition is used to build a model, then these models are averaged to provide a single global model for all conditions in the experiment. (Default)
+per-condition 	Each replicated condition receives its own model. Only available when all conditions have replicates.
+blind 	All samples are treated as replicates of a single global “condition” and used to build one model.
+poisson 	The Poisson model is used, where the variance in fragment count is predicted to equal the mean across replicates. Not recommended.
+
+Which method you choose largely depends on whether you expect variability in each group of samples to be similar. For example, if you are 
+comparing two groups, A and B, where A has low cross-replicate variability and B has high variability, it may be best to choose per-condition. 
+However, if the conditions have similar levels of variability, you might stick with the default, which sometimes provides a more robust model, 
+especially in cases where each group has few replicates. Finally, if you only have a single replicate in each condition, you must use blind, 
+which treats all samples in the experiment as replicates of a single condition. This method works well when you expect the samples to have 
+very few differentially expressed genes. If there are many differentially expressed genes, Cuffdiff will construct an overly conservative 
+model and you may not get any significant calls. In this case, you will need more replicates in your experiment.

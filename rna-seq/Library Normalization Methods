@@ -1,0 +1,4 @@
+Normalization Method 	Supported by Cufflinks 	Supported by Cuffdiff 	Description
+classic-fpkm 	Yes 	Yes 	Library size factor is set to 1 - no scaling applied to FPKM values or fragment counts. (default for Cufflinks)
+geometric 	No 	Yes 	FPKMs and fragment counts are scaled via the median of the geometric means of fragment counts across all libraries, as described in Anders and Huber (Genome Biology, 2010). This policy identical to the one used by DESeq. (default for Cuffdiff)
+quartile 	No 	Yes 	FPKMs and fragment counts are scaled via the ratio of the 75 quartile fragment counts to the average 75 quartile value across all libraries.

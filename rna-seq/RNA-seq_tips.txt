@@ -1,0 +1,9 @@
+1. 当目录底下有很多文件以.gz结尾的文件时：
+	tophat reference_genom_path $(printf "%s," ./*.gz | sed 's/,$/\n/') --output-dir output_dir_path
+
+2. cummeRbund使用中的一些问题
+	 I believe this is caused by fpkm values of zero. When the program takes the log of zero it becomes minus infinite (-Inf)
+ and these values are excluded from the analysis. I think there is an option called "pseudocount=0.0001" 
+ which adds 0.0001 to all zero values to work around this and keep all values in the analysis. 
+ If you do that the density should pile up close to the y-axis. Not sure if that is what you would want but it is an option. 
+ I tend to think it is ok to discard the zero fpkm values.

@@ -129,6 +129,9 @@ ENV/
 /rawData
 /bak
 /BW_index
+/Sent2Peng
 *.csv
 *.xlsx
+*.zip
+*.gz
 mm10_with-symbol
