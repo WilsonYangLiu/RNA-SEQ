@@ -129,5 +129,6 @@ ENV/
 /rawData
 /bak
 /BW_index
+*.csv
 *.xlsx
 mm10_with-symbol
