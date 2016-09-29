@@ -130,6 +130,7 @@ ENV/
 /bak
 /BW_index
 /Sent2Peng
+log
 *.csv
 *.xlsx
 *.zip
