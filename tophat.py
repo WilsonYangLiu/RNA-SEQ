@@ -8,8 +8,9 @@ import os
 GTF = "../BW_index/mm10_gene.gtf"
 genome = "../BW_index/mm10"
 
-f = open(sys.argv[1], 'r')	# the list of FastQ file
-allfile = [line.strip() for line in f]
+with open(sys.argv[1], 'r') as f:	# the list of FastQ file
+	allfile = [line.strip() for line in f]
+
 for i in range(0,len(allfile),2):
 	word = allfile[i].split(r'_')
 	cmd = "tophat2 -p 16 -o "+word[0]+"_thout --no-novel-juncs -G "+" ".join((GTF, gemone, allfile[i], allfile[i+1]) )

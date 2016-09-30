@@ -7,8 +7,8 @@ import os
 
 GTF = "../BW_index/mm10_gene.gtf"
 
-f = open(sys.argv[1], 'r')	# the list of accepted_hits.bam file
-allfile = [line.strip() for line in f]
+with open(sys.argv[1], 'r') as f:	# the list of accepted_hits.bam file
+	allfile = [line.strip() for line in f]
 
 for i in range(len(allfile)):
 	word = allfile[i].split('_')
