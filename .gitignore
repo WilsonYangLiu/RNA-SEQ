@@ -136,3 +136,4 @@ log
 *.zip
 *.gz
 mm10_with-symbol
+*.gtf
