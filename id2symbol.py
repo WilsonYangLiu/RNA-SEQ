@@ -1,9 +1,28 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
+# sys.argv[1]: file contains the cross link of one id to another id
+# sys.argv[2]: file that want to transform the id
 
-import os
+import os, sys
 import csv
+
+def usage():
+	print '''
+Convet the id to gene symbol
+		
+usage: 
+   [python] id2symbol.py database in_file > out_file
+		
+argument:
+   database:	file contains the cross link of one id to another id
+   in_file:	file that want to transform the id
+   out_file:	file that want to store the results
+
+Example: 
+   id2symbol.py mm10_with-symbol sig_GeneData.txt > sig_GeneData.csv
+	'''
+
+	sys.exit(1)
 
 def diffFile(filename):
 	GeneId = []
@@ -16,9 +35,11 @@ def diffFile(filename):
 	return GeneId
 	
 if __name__ == '__main__':
-	os.chdir(r'E:/Project_s542r04002/diff_off-2w_result')
+
+	if len(sys.argv) != 3:
+		usage()
 	
-	with open(r'../mm10_with-symbol', 'rU') as f:
+	with open(sys.argv[1], 'rU') as f:
 		f.readline()
 		GeneDict = {}
 		for line in f:
@@ -26,7 +47,7 @@ if __name__ == '__main__':
 			GeneDict[word[0]] = word[-1][:-1]
 		#print len(GeneDict)
 	
-	GeneId = diffFile(r'./gene_exp.diff')
+	GeneId = diffFile(sys.argv[2])
 	
 	for Gene in GeneId:
 		if Gene != '-':
@@ -37,4 +58,10 @@ if __name__ == '__main__':
 				else:
 					print "key", ensGene[i], "doesn't exist"
 			print 
+	
+		else:
+			print '{0},{0}'.format('-')
+
+
+
 	

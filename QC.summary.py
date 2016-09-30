@@ -3,7 +3,7 @@
 #
 
 import re
-import os 
+import os, sys
 import csv
 
 PATTERN = re.compile(r'<tr><td>(.+?)</td><td>(.+?)</td></tr>')
@@ -20,9 +20,8 @@ def processHTML(filename):
 	return Dict
 	
 if __name__ == '__main__':
-	os.chdir(r'E:/Project_s542r04002/rawData/QC_results')
 	
-	with open(r'html.list', 'rb') as f:
+	with open(sys.argv[1], 'rb') as f:
 		htmlNames = [line.strip() for line in f]
 		
 	Dict = {}
@@ -36,3 +35,5 @@ if __name__ == '__main__':
 			spamwriter.writerow([name])
 			spamwriter.writerow([key for key in item.keys() if key in Measure] )
 			spamwriter.writerow([val for key, val in item.items() if key in Measure])
+
+
