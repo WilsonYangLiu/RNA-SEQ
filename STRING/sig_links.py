@@ -9,7 +9,7 @@ from pickle import load
 from itertools import islice
 
 os.chdir(r'E:/Project_bak/Project_s542r04002/STRING')
-suffix = 'Sb'
+suffix = 'Sb'	# 'off'
 
 with open(r'cR_sig_symbol_{}.txt'.format(suffix), 'rb') as f:
 	sig_symbol = [item.strip() for item in f]
