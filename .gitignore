@@ -124,17 +124,15 @@ ENV/
 .ropeproject
 
 # My configurations
-/diff_Sb-2w_result
-/diff_off-2w_result
 /rawData
-/bak
 /BW_index
-/Sent2Peng
 /test
 log
 *.csv
 *.xlsx
 *.zip
 *.gz
+*.txt
+*.pickle
 mm10_with-symbol
 *.gtf
