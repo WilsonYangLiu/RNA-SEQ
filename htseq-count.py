@@ -14,5 +14,5 @@ for i in range(len(allfile)):
 	word = allfile[i].split('_')
 	cmd = "samtools sort -n -o "+word[0]+".sort "+allfile[i]+" > "+word[0]+".sort.bam"
 	os.system(cmd)
-	cmd = "htseq-count -f bam -i gene_id -m intersection-nonempty "+word[0]+".sort.bam "+GTF+" > "+word[0]+".count"
+	cmd = "htseq-count -f bam -i gene_id -s no -m intersection-nonempty "+word[0]+".sort.bam "+GTF+" > "+word[0]+".count"
 	os.system(cmd)
