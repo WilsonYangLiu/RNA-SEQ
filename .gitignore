@@ -124,7 +124,7 @@ ENV/
 .ropeproject
 
 # My configurations
-/rawData
+/rawData*
 /BW_index*
 /test
 log
