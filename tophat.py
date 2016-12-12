@@ -5,8 +5,8 @@
 import sys, string
 import os
 
-GTF = "../BW_index/mm10_gene.gtf"
-genome = "../BW_index/mm10"
+GTF = "../BW_index_mm10/mm10_gene.gtf"
+genome = "../BW_index_mm10/mm10"
 
 with open(sys.argv[1], 'r') as f:	# the list of FastQ file
 	allfile = [line.strip() for line in f]

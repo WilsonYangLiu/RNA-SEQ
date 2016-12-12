@@ -39,8 +39,8 @@ rm fastq.list
 
 # Identify differentially expressed genes and transcript
 nTHREAD=16
-GENOME=../BW_index/mm10.fa
-GTF=../BW_index/mm10_gene.gtf
+GENOME=../BW_index_mm10/mm10.fa
+GTF=../BW_index_mm10/mm10_gene.gtf
 control=control
 condition1=diff_off-2w
 condition2=diff_Sb-2w
